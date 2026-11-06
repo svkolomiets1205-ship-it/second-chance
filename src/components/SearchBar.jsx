@@ -1,0 +1,4 @@
+import { Search, MapPin, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+export default function SearchBar(){const [q,setQ]=useState(''),[city,setCity]=useState('');const nav=useNavigate();return <form className="search-bar" onSubmit={e=>{e.preventDefault();nav(`/catalog?q=${encodeURIComponent(q)}&city=${encodeURIComponent(city)}`)}}><label><Search size={21}/><input aria-label="Що ви шукаєте?" placeholder="Що ви шукаєте?" value={q} onChange={e=>setQ(e.target.value)}/></label><label className="search-city"><MapPin size={18}/><select aria-label="Місто" value={city} onChange={e=>setCity(e.target.value)}><option value="">Вся Україна</option>{['Київ','Львів','Одеса','Івано-Франківськ'].map(c=><option key={c}>{c}</option>)}</select></label><button className="button">Знайти <ArrowRight size={18}/></button></form>}

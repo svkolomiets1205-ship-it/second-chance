@@ -1,0 +1,2 @@
+import { Armchair, Shirt, Monitor, BookOpen, House, Baby, PawPrint, Ellipsis } from 'lucide-react';
+export const categories = [ ['furniture','Меблі',Armchair],['clothing','Одяг і взуття',Shirt],['electronics','Електроніка',Monitor],['books','Книги',BookOpen],['home','Дім і побут',House],['kids','Дитячі товари',Baby],['pets','Для тварин',PawPrint],['other','Інше',Ellipsis] ].map(([id,name,icon])=>({id,name,icon}));
